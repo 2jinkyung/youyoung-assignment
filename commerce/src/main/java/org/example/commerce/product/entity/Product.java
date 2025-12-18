@@ -2,6 +2,7 @@ package org.example.commerce.product.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.commerce.user.entity.User;
@@ -12,6 +13,7 @@ import org.hibernate.annotations.Comment;
 @Getter
 @Entity
 @Table(name = "tb_product")
+@Builder
 public class Product {
 
     @Id
@@ -32,6 +34,6 @@ public class Product {
     private int count;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 }

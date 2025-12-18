@@ -21,3 +21,7 @@
 
 INSERT INTO tb_user (name) VALUES ('user1');
 INSERT INTO tb_user (name) VALUES ('user2');
+
+INSERT INTO tb_product (name, price, count) VALUES ('연필', 500, 10);
+INSERT INTO tb_product (name, price, count) VALUES ('지우개', 100, 100);
+INSERT INTO tb_product (name, price, count) VALUES ('공책', 5000, 50);
