@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.commerce.user.entity.User;
+import org.example.commerce.order.entity.Order;
 import org.hibernate.annotations.Comment;
 
 @AllArgsConstructor
@@ -33,12 +33,11 @@ public class Product {
     @Column(name = "count")
     private int count;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
 
-    public void orderCount(int count,User user){
-        this.user = user;
+    public void orderCount(int count){
         this.count -= count;
     }
 

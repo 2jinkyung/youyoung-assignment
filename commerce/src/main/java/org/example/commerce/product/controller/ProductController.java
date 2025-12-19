@@ -14,7 +14,6 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.RestTemplate;
 
 @RequiredArgsConstructor
 @RestController("/product")
@@ -25,7 +24,7 @@ public class ProductController {
     @PageableAsQueryParam
     @Operation(summary = "상품 목록 조회", description = "상품 목록 조회")
     @GetMapping("")
-    public ResponseEntity<?> getList(
+    public ResponseEntity<?> findPrdList(
             @Nullable String keyword,
             @Parameter(hidden = true) @PageableDefault(size = 5,sort = {"productId"}, direction = Sort.Direction.ASC) Pageable page
     ) {
@@ -40,5 +39,17 @@ public class ProductController {
             @Valid @RequestBody ProductCreateDto createDto)
      {
         return new ResponseEntity<>(productService.createProduct(userId, createDto), HttpStatus.OK);
-    }   
+    }
+
+//    @PageableAsQueryParam
+//    @Operation(summary = "사용자별 주문 목록 조회", description = "사용자별 주문 목록 조회")
+//    @GetMapping("/{userId}")
+//    public ResponseEntity<?> UserFindPrdList(
+//            @PathVariable Long userId,
+//            @Parameter(hidden = true) @PageableDefault(size = 5,sort = {"productId"}, direction = Sort.Direction.ASC) Pageable page
+//    ) {
+//        return new ResponseEntity<>(productService.findProducts(keyword, page), HttpStatus.OK);
+//    }
+
+
 }

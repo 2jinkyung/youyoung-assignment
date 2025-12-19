@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.example.commerce.product.entity.Product;
+import org.example.commerce.order.entity.Order;
 import org.hibernate.annotations.Comment;
 
 import java.util.ArrayList;
@@ -27,5 +27,5 @@ public class User {
     private String name;
 
     @OneToMany(mappedBy = "user")
-    private List<Product> products = new ArrayList<>();
+    private List<Order> orders = new ArrayList<>();
 }
