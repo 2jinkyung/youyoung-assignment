@@ -73,18 +73,23 @@
 - 연관관계의 정확성 여부
 
 ### 데이터베이스 ERD 다이어그램
-- <img width="258" height="421" alt="image" src="https://github.com/user-attachments/assets/6d513481-14a2-4f2b-ba12-b8891f4abe65" />
-order , user , product 3개의 테이블로 구성되어있으며 user는 order와 양방향 N:1 / order는 product와 단방향 1:N 관계를 가지고 있습니다.
+<img width="258" height="421" alt="image" src="https://github.com/user-attachments/assets/6d513481-14a2-4f2b-ba12-b8891f4abe65" />
+
+- order , user , product 3개의 테이블로 구성되어있으며 user는 order와 양방향 N:1 / order는 product와 단방향 1:N 관계를 가지고 있습니다.
 ### 프로젝트 실행 방법
-- 현재 user 데이터
--  {id:1,name:user1},{id:2,name:user2}
--  - 현재 product 데이터
--  {name:'연필',price: 500,count: 10},{name:'지우개',price: 100,count: 100},{name:'공책',price: 5000,count: 50}
-데이터가 등록되어있습니다.
+테스트가 가능한 기본 데이터가 등록되어있습니다. 해당 데이터를 사용하시거나 추가로 데이터를 등록하여 테스트가 가능합니다.
+- user 데이터
+    -  {id:1,name:user1}
+    -  {id:2,name:user2}
+- product 데이터
+    -  {name:'연필',price: 500,count: 10}
+    -  {name:'지우개',price: 100,count: 100}
+    -  {name:'공책',price: 5000,count: 50}
+
 
 - swagger 접속 주소
   [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
-  - h2 접속 주소
+- h2 접속 주소
 localhost:8080/h2-console
 * swagger 와 h2 로컬접속을 통해 등록되어있는 데이터를 이용하여 api 테스트를 부탁드리겠습니다.
 ---
