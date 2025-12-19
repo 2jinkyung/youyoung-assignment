@@ -3,6 +3,7 @@ package org.example.commerce.product.repository;
 import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
+import org.example.commerce.order.entity.Order;
 import org.example.commerce.product.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static org.example.commerce.order.entity.QOrder.order;
 import static org.example.commerce.product.entity.QProduct.product;
 
 @RequiredArgsConstructor
@@ -47,6 +49,29 @@ public class ProductCustomRepositoryImpl implements ProductCustomRepository {
                 .where(
                         product.name.contains(keyword)
                 )
+                .fetchOne();
+    }
+
+
+    @Override
+    public Page<Order> findOrderList(Long userId, Pageable pageable) {
+        List<Order> findOrder= jpaQueryFactory.selectFrom(order)
+                .where(
+                        order.user.userId.eq(userId)
+                )
+                .orderBy(order.orderId.asc())
+                .offset(pageable.getOffset())
+                .limit(pageable.getPageSize())
+                .fetch();
+        return new PageImpl<>(findOrder, pageable, findOrderListAllCount(userId));
+    }
+
+    //총 갯수
+    public Long findOrderListAllCount(Long userId) {
+        return jpaQueryFactory
+                .select(order.count())
+                .from(order)
+                .where(order.user.userId.eq(userId))
                 .fetchOne();
     }
 }

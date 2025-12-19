@@ -68,4 +68,17 @@ public class ProductService {
                 )
         );
     }
+
+    //사용자별 목록 조회
+    public Page<OrderDto> findOrderList(Long userId, Pageable pageable) {
+        userRepository.findByUserId(userId)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST,"사용자를 찾을 수 없습니다."));
+
+        Page<Order> findProducts= productRepository.findOrderList(userId,pageable);
+        return new PageImpl<>(
+                findProducts.stream().map(OrderDto::toDto).toList(),
+                findProducts.getPageable(),
+                findProducts.getTotalElements()
+        );
+    }
 }
