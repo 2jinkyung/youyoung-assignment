@@ -3,7 +3,9 @@ package org.example.commerce.product.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.annotation.Nullable;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.example.commerce.product.entity.ProductCreateDto;
 import org.example.commerce.product.service.ProductService;
 import org.springdoc.core.converters.models.PageableAsQueryParam;
 import org.springframework.data.domain.Pageable;
@@ -11,9 +13,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 @RequiredArgsConstructor
@@ -32,4 +32,13 @@ public class ProductController {
         if(keyword == null) keyword = "";
         return new ResponseEntity<>(productService.findProducts(keyword, page), HttpStatus.OK);
     }
+
+    @Operation(summary = "주문 생성", description = "사용자 상품 주문")
+    @PostMapping("/{userId}/create")
+    public ResponseEntity<?> createProduct (
+            @Parameter @PathVariable Long userId,
+            @Valid @RequestBody ProductCreateDto createDto)
+     {
+        return new ResponseEntity<>(productService.createProduct(userId, createDto), HttpStatus.OK);
+    }   
 }

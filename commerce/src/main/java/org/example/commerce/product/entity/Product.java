@@ -36,4 +36,13 @@ public class Product {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private User user;
+
+    public void orderCount(int count,User user){
+        this.user = user;
+        this.count -= count;
+    }
+
+    public void cancelCount(int cancel){
+        this.count += cancel;
+    }
 }

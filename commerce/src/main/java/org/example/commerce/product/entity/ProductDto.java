@@ -1,5 +1,6 @@
 package org.example.commerce.product.entity;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import lombok.*;
 import org.example.commerce.user.entity.User;
@@ -14,13 +15,13 @@ public class ProductDto {
 
     private Long productId;
 
-    @Column(name = "name")
+    @Schema(description = "상품명")
     private String name;
 
-    @Column(name = "price")
+    @Schema(description = "가격")
     private int price;
 
-    @Column(name = "count")
+    @Schema(description = "재고 수량")
     private int count;
 
 
