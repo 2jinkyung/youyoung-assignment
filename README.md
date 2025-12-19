@@ -66,10 +66,27 @@
 
 ## README.md 포함 내용
 리포지토리의 `README.md`에 아래 내용을 정리하여 작성해주세요.
-- 설계 및 구현 시 고민했던 부분
-- 데이터베이스 ERD 다이어그램
-- 프로젝트 실행 방법
+### 설계 및 구현 시 고민했던 부분
+- 주문 테이블에 날짜 데이터 및 구현하고 싶은 부분이 많았고 
+- 주문시 사용자가 수량을 체크하는 동시에 에러처리를 해야할지 전체 결제로 넘어간후 전체적인 체크후 에러 처리를 하는게 좋을지도 고민을 하였습니다
+- 주문 취소시 데이터 소프트 딜리트 여부
+- 연관관계의 정확성 여부
 
+### 데이터베이스 ERD 다이어그램
+- <img width="258" height="421" alt="image" src="https://github.com/user-attachments/assets/6d513481-14a2-4f2b-ba12-b8891f4abe65" />
+order , user , product 3개의 테이블로 구성되어있으며 user는 order와 양방향 N:1 / order는 product와 단방향 1:N 관계를 가지고 있습니다.
+### 프로젝트 실행 방법
+- 현재 user 데이터
+-  {id:1,name:user1},{id:2,name:user2}
+-  - 현재 product 데이터
+-  {name:'연필',price: 500,count: 10},{name:'지우개',price: 100,count: 100},{name:'공책',price: 5000,count: 50}
+데이터가 등록되어있습니다.
+
+- swagger 접속 주소
+  [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
+  - h2 접속 주소
+localhost:8080/h2-console
+* swagger 와 h2 로컬접속을 통해 등록되어있는 데이터를 이용하여 api 테스트를 부탁드리겠습니다.
 ---
 
 ## 제출 기한
