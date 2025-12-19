@@ -1,14 +1,13 @@
-package org.example.commerce.product.entity;
+package org.example.commerce.order.entity;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import jakarta.persistence.Column;
 import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProductCreateDto {
+public class OrderCreateDto {
 
     @Schema(description = "상품명",defaultValue = "공책")
     private String name;

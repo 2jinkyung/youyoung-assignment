@@ -5,7 +5,7 @@ import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.example.commerce.product.entity.ProductCreateDto;
+import org.example.commerce.order.entity.OrderCreateDto;
 import org.example.commerce.product.service.ProductService;
 import org.springdoc.core.converters.models.PageableAsQueryParam;
 import org.springframework.data.domain.Pageable;
@@ -36,7 +36,7 @@ public class ProductController {
     @PostMapping("/{userId}/create")
     public ResponseEntity<?> createProduct (
             @Parameter @PathVariable Long userId,
-            @Valid @RequestBody ProductCreateDto createDto)
+            @Valid @RequestBody OrderCreateDto createDto)
      {
         return new ResponseEntity<>(productService.createProduct(userId, createDto), HttpStatus.OK);
     }
@@ -51,5 +51,12 @@ public class ProductController {
         return new ResponseEntity<>(productService.findOrderList(userId, page), HttpStatus.OK);
     }
 
+    @Operation(summary = "주문 취소", description = "주문 취소")
+    @DeleteMapping("/{orderId}")
+    public ResponseEntity<?> cancelOrder(
+            @PathVariable Long orderId
+    ) {
+        return new ResponseEntity<>(productService.cancelOrder(orderId), HttpStatus.OK);
+    }
 
 }

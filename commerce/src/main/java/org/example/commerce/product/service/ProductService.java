@@ -5,7 +5,7 @@ import org.example.commerce.order.entity.Order;
 import org.example.commerce.order.entity.OrderDto;
 import org.example.commerce.order.repository.OrderRepository;
 import org.example.commerce.product.entity.Product;
-import org.example.commerce.product.entity.ProductCreateDto;
+import org.example.commerce.order.entity.OrderCreateDto;
 import org.example.commerce.product.entity.ProductDto;
 import org.example.commerce.product.repository.ProductRepository;
 import org.example.commerce.user.entity.User;
@@ -41,7 +41,7 @@ public class ProductService {
 
     //주문 생성
     @Transactional
-    public OrderDto createProduct(Long userId, ProductCreateDto createDto){
+    public OrderDto createProduct(Long userId, OrderCreateDto createDto){
         User userEntity = userRepository.findByUserId(userId)
                 .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST,"사용자를 찾을 수 없습니다."));
 
@@ -80,5 +80,19 @@ public class ProductService {
                 findProducts.getPageable(),
                 findProducts.getTotalElements()
         );
+    }
+
+    @Transactional
+    //주문 취소
+    public String cancelOrder(Long orderId){
+        Order orderEntity = orderRepository.findById(orderId)
+                .orElseThrow(()-> new ResponseStatusException(HttpStatus.BAD_REQUEST,"주문 내역을 찾을 수 없습니다."));
+
+        Product updateProduct = orderEntity.getProduct();
+        updateProduct.cancelCount(orderEntity.getOrderCount());
+        productRepository.save(updateProduct);
+
+        orderRepository.delete(orderEntity);
+        return "주문이 취소되었습니다.";
     }
 }
