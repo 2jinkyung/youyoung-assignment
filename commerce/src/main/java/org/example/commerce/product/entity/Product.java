@@ -33,6 +33,9 @@ public class Product {
     @Column(name = "count")
     private int count;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "order_id")
+    private Order order;
 
     public void orderCount(int count){
         this.count -= count;
