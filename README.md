@@ -67,7 +67,19 @@
 ## README.md 포함 내용
 리포지토리의 `README.md`에 아래 내용을 정리하여 작성해주세요.
 - 설계 및 구현 시 고민했던 부분
-- 데이터베이스 ERD 다이어그램
+### 데이터베이스 ERD 다이어그램
+1. [주문 테이블 (tb_order)] 
+   - Long orderId (PK)
+   - User user (FK)
+   - Product product (FK)
+   - int orderCount
+2. [상품 테이블 (tb_product)]
+   - Long productId (PK)
+   - String productName
+   - int price
+   - int stockQuantity
+3. [사용자 테이블 (tb_user)]
+- ![img.png](img.png)
 - 프로젝트 실행 방법
 
 ---
