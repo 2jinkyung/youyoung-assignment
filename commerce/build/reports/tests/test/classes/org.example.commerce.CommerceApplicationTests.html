@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - CommerceApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>CommerceApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.example.commerce.html">org.example.commerce</a> &gt; CommerceApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.577s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.577s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">00:00:30.846 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.example.commerce.CommerceApplicationTests]: CommerceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+00:00:31.052 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.example.commerce.CommerceApplication for test class org.example.commerce.CommerceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.5.8)
+
+2025-12-20T00:00:31.834+09:00  INFO 18252 --- [commerce] [    Test worker] o.e.commerce.CommerceApplicationTests    : Starting CommerceApplicationTests using Java 17.0.15 with PID 18252 (started by JK in D:\workspace\youyoung-assignment\commerce)
+2025-12-20T00:00:31.834+09:00  INFO 18252 --- [commerce] [    Test worker] o.e.commerce.CommerceApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-12-20T00:00:33.146+09:00  INFO 18252 --- [commerce] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-20T00:00:33.274+09:00  INFO 18252 --- [commerce] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 105 ms. Found 3 JPA repository interfaces.
+2025-12-20T00:00:33.985+09:00  INFO 18252 --- [commerce] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-20T00:00:34.111+09:00  INFO 18252 --- [commerce] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.36.Final
+2025-12-20T00:00:34.182+09:00  INFO 18252 --- [commerce] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-20T00:00:34.747+09:00  INFO 18252 --- [commerce] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-20T00:00:34.810+09:00  INFO 18252 --- [commerce] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-20T00:00:35.079+09:00  INFO 18252 --- [commerce] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2025-12-20T00:00:35.095+09:00  INFO 18252 --- [commerce] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-20T00:00:35.187+09:00  INFO 18252 --- [commerce] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-20T00:00:36.561+09:00  INFO 18252 --- [commerce] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists tb_order cascade 
+Hibernate: 
+    drop table if exists tb_product cascade 
+Hibernate: 
+    drop table if exists tb_user cascade 
+Hibernate: 
+    create table tb_order (
+        order_count integer,
+        order_id bigint generated by default as identity,
+        product_id bigint,
+        user_id bigint,
+        primary key (order_id)
+    )
+Hibernate: 
+    comment on column tb_order.order_count is
+        '주문 수량'
+Hibernate: 
+    create table tb_product (
+        count integer,
+        price integer,
+        order_id bigint unique,
+        product_id bigint generated by default as identity,
+        name varchar(255) not null,
+        primary key (product_id)
+    )
+Hibernate: 
+    comment on column tb_product.count is
+        '재고수량'
+Hibernate: 
+    comment on column tb_product.price is
+        '가격'
+Hibernate: 
+    comment on column tb_product.name is
+        '상품명'
+Hibernate: 
+    create table tb_user (
+        user_id bigint generated by default as identity,
+        name varchar(255) not null,
+        primary key (user_id)
+    )
+Hibernate: 
+    comment on column tb_user.name is
+        '사용자 이름'
+Hibernate: 
+    alter table if exists tb_order 
+       add constraint FKse6ptij0s2pp2nnbji87ivv46 
+       foreign key (product_id) 
+       references tb_product
+Hibernate: 
+    alter table if exists tb_order 
+       add constraint FK2p4n9ciui39792tk5qdpcxq1w 
+       foreign key (user_id) 
+       references tb_user
+Hibernate: 
+    alter table if exists tb_product 
+       add constraint FK74jnj2grq2t2vtv2xjquhs0ds 
+       foreign key (order_id) 
+       references tb_order
+2025-12-20T00:00:36.655+09:00  INFO 18252 --- [commerce] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-20T00:00:37.610+09:00  WARN 18252 --- [commerce] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-20T00:00:37.687+09:00  INFO 18252 --- [commerce] [    Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
+2025-12-20T00:00:38.210+09:00  INFO 18252 --- [commerce] [    Test worker] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2025-12-20T00:00:38.357+09:00  INFO 18252 --- [commerce] [    Test worker] o.e.commerce.CommerceApplicationTests    : Started CommerceApplicationTests in 7.026 seconds (process running for 8.885)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.2.1</a> at 2025. 12. 20. 오전 12:00:39</p>
+</div>
+</div>
+</body>
+</html>
